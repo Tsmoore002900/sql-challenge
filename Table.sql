@@ -2,7 +2,7 @@
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/aTKAzq
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
-
+-- Create Tables
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
     "dept_name" VARCHAR   NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE "titles" (
         "title_id"
      )
 );
-
+--Foreign Keys
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
@@ -65,7 +65,7 @@ REFERENCES "titles" ("title_id");
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
---check the tables
+--Check the Tables
 SELECT * FROM departments;
 SELECT * FROM titles;
 SELECT * FROM employees;
